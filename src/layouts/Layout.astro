@@ -33,20 +33,20 @@ const { title } = Astro.props;
   </body>
 
   <style is:global>
-      .common-carousel .swiper-button-next:after,
-      .common-carousel .swiper-button-prev:after {
-        @apply hidden;
-      }
+    .common-carousel .swiper-button-next:after,
+    .common-carousel .swiper-button-prev:after {
+      @apply hidden;
+    }
 
-      .common-carousel .swiper-button-next,
-      .common-carousel .swiper-button-prev {
-        @apply !static h-12 w-12 rounded-lg bg-white dark:bg-black dark:text-white m-0 ease-out duration-200 hover:bg-primary hover:text-white hover:shadow-none;
-      }
+    .common-carousel .swiper-button-next,
+    .common-carousel .swiper-button-prev {
+      @apply !static h-12 w-12 rounded-lg bg-white dark:bg-black dark:text-white m-0 ease-out duration-200 hover:bg-primary hover:text-white hover:shadow-none;
+    }
 
-      .common-carousel .swiper-button-next svg,
-      .common-carousel .swiper-button-prev svg {
-        @apply w-auto h-auto;
-      }
+    .common-carousel .swiper-button-next svg,
+    .common-carousel .swiper-button-prev svg {
+      @apply w-auto h-auto;
+    }
   </style>
 
   <script>
@@ -55,7 +55,6 @@ const { title } = Astro.props;
 
     import 'swiper/css';
     import 'swiper/css/navigation';
-
 
     const testimonialSwiper = new Swiper('.testimonial-carousel', {
       modules: [Navigation, Autoplay],
@@ -91,6 +90,21 @@ const { title } = Astro.props;
           spaceBetween: 30,
         },
       },
+    });
+
+    const heroSwiper = new Swiper('.hero-carousel', {
+      modules: [Navigation, Autoplay],
+
+      slidesPerView: 1,
+      spaceBetween: 30,
+      autoplay: {
+        delay: 2500,
+      },
+
+      pagination: {
+        clickable: true,
+      },
+
     });
 
     const switchTheme = document.querySelector(
